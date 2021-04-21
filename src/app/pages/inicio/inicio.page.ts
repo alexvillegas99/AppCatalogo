@@ -19,6 +19,7 @@ export class InicioPage implements OnInit {
   cambiar = true;
   busqueda = false;
   productosFiltrados: producto[] = [];
+  CategoriasSinOrden: categoria[] = [];
   Categorias: categoria[] = [];
   mensaje = '';
   constructor(private crudService: CrudProductosService,
@@ -41,7 +42,11 @@ export class InicioPage implements OnInit {
   }
   async cargarCategorias() {
     await this.CategoriasService.getCategorias().subscribe(res => {
+     
       this.Categorias = res;
+      this.Categorias.sort(function (a, b){
+        return (a.orden - b.orden)
+      })
     });
 
   }

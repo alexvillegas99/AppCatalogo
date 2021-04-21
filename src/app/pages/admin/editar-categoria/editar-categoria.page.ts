@@ -14,7 +14,8 @@ export class EditarCategoriaPage implements OnInit {
   Categoria:categoria={
     nombre:'',
     imagen:'',
-    estado: true
+    estado: true,
+    orden:100
   };
   constructor(private ruta: ActivatedRoute,
               private CategoriaService:CrudCategoriasService,
@@ -28,6 +29,7 @@ id='';
     await this.CategoriaService.getCategoria(id).subscribe(res=>{
       this.Categoria = res;
     }) ;
+    
   }
   chooseFile (event) {
     this.filePath = event.target.files[0];

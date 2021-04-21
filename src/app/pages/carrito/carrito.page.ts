@@ -30,7 +30,7 @@ export class CarritoPage implements OnInit {
     this.productos.forEach(producto => {
       total += producto.total;
     })
-    this.total=total;
+    this.total=total+2;
   }
   async cargarProductos() {
     let total = 0;

@@ -12,7 +12,8 @@ export class AgregarCategoriaPage implements OnInit {
 Categoria?:categoria={
   nombre:'',
   imagen:'',
-  estado:true
+  estado:true,
+  orden:100
 }
 selectedFile:File;
   constructor(private categoriaService:CrudCategoriasService,

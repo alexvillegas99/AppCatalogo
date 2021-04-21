@@ -59,6 +59,7 @@ async enviar(){
   texto += '    *Comentario* ' + this.comentario;
   texto += '    *Artículos* ' ;
   texto+=this.strinProductos;
+  texto+= ' *Delivery* $2,00'
   texto += ' *Para que tu pedido llegue de inmediato, por favor envíanos tu ubicación.* '
   let url = 'https://wa.me/' + this.numero + '?text=' + texto;
   const browser = this.iab.create(url,'_system');
