@@ -28,9 +28,9 @@ export class CarritoPage implements OnInit {
   async calculaTotal() {
     let total=0;
     this.productos.forEach(producto => {
-      total += producto.total;
+      total += Number(producto.total.toFixed(2));
     })
-    this.total=total+2;
+    this.total=Number((total+2).toFixed(2));
   }
   async cargarProductos() {
     let total = 0;

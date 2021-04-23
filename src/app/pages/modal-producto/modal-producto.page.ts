@@ -30,6 +30,7 @@ export class ModalProductoPage implements OnInit {
       this.producto.cantidad = valor;
     }
     this.producto.total  =  this.producto.cantidad * this.producto.precio;
+    this.producto.total=Number(this.producto.total.toFixed(2));
   }
   salir() {
     this.modalCtrl.dismiss();

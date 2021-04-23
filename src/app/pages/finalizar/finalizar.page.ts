@@ -43,7 +43,8 @@ strinProductos ='';
       this.total += producto.total;
       cont++;
     })
-    this.strinProductos +='    *Total Compra*: $' + this.total;
+    this.strinProductos+= ' *Delivery* $2,00'
+    this.strinProductos +='    *Total Compra*: $' + Number((this.total +2).toFixed(2));
   }
 async enviar(){
   if(this.nombre !== ' ' && this.envio!=='' && this.FormaPago!=='' 
@@ -59,12 +60,12 @@ async enviar(){
   texto += '    *Comentario* ' + this.comentario;
   texto += '    *Artículos* ' ;
   texto+=this.strinProductos;
-  texto+= ' *Delivery* $2,00'
+  
   texto += ' *Para que tu pedido llegue de inmediato, por favor envíanos tu ubicación.* '
   let url = 'https://wa.me/' + this.numero + '?text=' + texto;
   const browser = this.iab.create(url,'_system');
   this.dataLocal.setear();
-  this.navCtrl.navigateForward('/inicio')
+  this.navCtrl.navigateForward('/')
 }else{
   const alert = await this.alertCtrl.create({
     cssClass: 'my-custom-class',
@@ -76,8 +77,6 @@ async enviar(){
   await alert.present();
 }
 }
-cancelar(){
-  this.modalCtrl.dismiss();
-}
+
 
 }

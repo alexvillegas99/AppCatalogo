@@ -11,9 +11,9 @@
   <app-promociones [routerLink]="['/promociones']" routerLinkActive="router-link-active" *ngIf="!busqueda"></app-promociones>
    <ion-searchbar placeholder="Buscar..."  debounce='700'  
    inputmode="text" (ionChange)='buscar($event)' ></ion-searchbar>
- <!-- <app-productos [productos]='productos'></app-productos>-->
+
  <!-- Segmento Categorias y todo-->
- <ion-segment scrollable mode="md" *ngIf="!busqueda" color="primary" style="width: 100%;" value="Categorias"  
+ <ion-segment  mode="md" *ngIf="!busqueda" color="primary" expand="block" value="Categorias"  
     (ionChange)="CambioTipo($event)">
     <ion-segment-button mode="md" value="Opcion"style="width: 50%;" *ngFor="let tipo of tipos" [value]='tipo'>
       <ion-label text-capitalize color="primary">{{tipo}}</ion-label>
